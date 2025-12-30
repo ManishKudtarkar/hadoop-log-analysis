@@ -1,0 +1,4 @@
+*.pyc
+/logs/output
+/tmp
+.DS_Store
