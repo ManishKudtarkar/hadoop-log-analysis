@@ -40,6 +40,8 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.3.6.jar \
 -input /logs/input \
 -output /logs/output
 
+
+
 📊 SAMPLE OUTPUT (part-00000)
 192.168.1.1    3
 192.168.1.2    2
