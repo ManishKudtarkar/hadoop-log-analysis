@@ -23,3 +23,25 @@ The goal of the project is to count the number of requests coming from each IP a
 The dataset consists of web server access logs similar to Apache/Nginx logs.
 
 **Sample log format:**
+192.168.1.1 - - [30/Dec/2025:22:01:01] "GET /index.html HTTP/1.1" 200
+
+
+✅ REQUIRED PERMISSIONS (VERY IMPORTANT)
+
+Run once:
+
+chmod +x mapper/mapper.py reducer/reducer.py
+
+🚀 HOW IT RUNS IN HADOOP
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.3.6.jar \
+-files mapper/mapper.py,reducer/reducer.py \
+-mapper mapper.py \
+-reducer reducer.py \
+-input /logs/input \
+-output /logs/output
+
+📊 SAMPLE OUTPUT (part-00000)
+192.168.1.1    3
+192.168.1.2    2
+192.168.1.3    1
+
